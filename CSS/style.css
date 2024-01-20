@@ -1,0 +1,123 @@
+/*
+HEADER
+border: 2px solid red;
+*/
+
+:root {
+  --color-white: #ffffff; /* var(--color-white, #FFFFFF);*/
+  --color-accent: #fe461c; /* var(--color-accent, #FE461C);*/
+  --color-orangered: #d52d07; /* var(--color-orangered, #D52D07);*/
+
+  --background-color-dark: #1f2235; /* var(--background-color-dark, #1F2235);*/
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem; /* 16px;*/
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px; /* 93.75% */
+  color: var(--color-white, #ffffff);
+  /* background: var(--background-color-dark, #1F2235); */
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-white, #ffffff);
+}
+
+/* ---------- CLASS ---------- */
+.container {
+  margin-inline: auto;
+  max-width: 1618px;
+  border: 2px solid red;
+}
+
+.background-dark {
+  background: var(--background-color-dark, #1f2235);
+}
+
+.btn {
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 93.75%; /* 15px;*/
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--color-white, #ffffff);
+  border-radius: 4px;
+  padding: 0.9375rem 1rem;
+}
+
+.btn-xl {
+  width: 11.25rem;
+  height: 3.125rem;
+}
+
+.btn-red {
+  background: var(--color-accent, #fe461c);
+  &:is(:hover, :focus) {
+    box-shadow: 0px 0px 24px 0px rgba(13, 13, 15, 0.42);
+  }
+  &:active {
+    background: var(--color-orangered, #d52d07);
+  }
+}
+
+/* ---------- HEADER ---------- */
+.nav,
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  padding: 22px 0;
+  border: 2px solid red;
+}
+
+.nav-logo {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+
+.menu-item {
+  position: relative;
+  padding: 18px 20px 0;
+  text-transform: capitalize;
+  cursor: pointer;
+  & a {
+    display: block;
+    padding-bottom: 18px;
+  }
+  & ::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-white, #ffffff);
+    transition: width 0.5s;
+  }
+  & :hover::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--color-accent, #fe461c);
+    transition: width 0.5s;
+  }
+}
+
+.link__active {
+  color: var(--color-accent, #fe461c);
+}
+
+/* ---------- MAIN ---------- */
+/* ---------- FOOTER ---------- */
